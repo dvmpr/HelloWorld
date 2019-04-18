@@ -1,0 +1,183 @@
+初级：
+单选：
+1. ISO定义了网络的7层标准模型，以下选项中按自下而上的顺序排列正确的是：
+物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。
+2. 关于HTTP和HTTPS的区别，以下说法种错误的是：D
+A. HTTPS比HTTP更安全
+B. HTTP是超文本传输，HTTPS是加密传输协议
+C. HPPTS需要申请CA证书
+D. HTTP和HTTPS使用的端口必须不能相同，前者使用80，后者使用443
+3. 常见HTTP请求返回的状态码中，表示Forbidden资源不允许使用的是：D
+A. 302
+B. 500
+C. 404
+D. 403
+4. 在各自最优的条件下，对N个数进行排序，以下算法中复杂度最低的是：C
+A. 快速排序
+B. 插入排序
+C. 冒泡排序
+D. 归并排序
+5. 一个栈的入栈序列为ABCDEF，则不可能的出栈序列是：D
+A. DEFCBA
+B. DCEFBA
+C. FEDCBA
+D. FECDBA
+6. 如下哪个不是JAVA的关键字：B
+A. const
+B. NULL
+C. false
+D. this
+7. 以下代码运行输出是：C
+public class Person{
+private String name=”Person”;
+int age=0;
+}
+public class Child extends Person{
+public String grade;
+public static void main(String[] args){
+Person p = new Child();
+System.out.println(p.name);
+}
+}
+A. 输出：Person
+B. 没有输出
+C. 编译出错
+D. 运行出错
+8. 关于垃圾收集的叙述正确的是：B
+A. 程序开发者必须自己创建一个线程进行内存释放的工作
+B. 垃圾收集将检查并释放不再使用的内存
+C. 垃圾收集允许程序开发者明确指定并立即释放内存
+D. 垃圾收集能在期望的时间释放被JAVA对象使用的内存
+9. Java中的集合类包括ArrayList、LinkedList、HashMap等类，下列关于集合类描述错误的是：C
+A. ArrayList和LinkedList均实现了List接口
+B. ArrayList的访问速度比LinkedList快
+C. 添加和删除元素时，ArrayList的表现更佳
+D. HashMap实现Map接口，它允许任何类型的键和值对象，并允许将null用作键或值
+10. Spring声明式事务中默认的传播属性是：A
+A. PROPAGATION_REQUIRED
+B. PROPAGATION_REQUIRES_NEW
+C. PROPAGATION_SUPPORTS
+D. PROPAGATION_MANDATORY
+多选：
+1. 下列关于HTTP协议的描述正确的是：BC
+A. HTTP协议是有状态的
+B. HTTP是一个基于TCP/IP的应用层协议
+C. HTTP请求方法有GET、HEAD、POST、PUT等
+D. HTTP响应码200表示服务器异常
+2. 事务的特性有：ACDE
+A. 原子性
+B. 可用性
+C. 一致性
+D. 隔离性
+E. 持久性
+3. switch语句支持以下哪些基本类型：ABCD
+A. byte
+B. short
+C. int
+D. char
+E. long
+4. 以下属于面向对象的特征的是：ACD
+A. 继承
+B. 重载
+C. 多态
+D. 封装
+5. 以下关于final关键字说法错误的是：AC
+A. final是java中的修饰符，可以修饰类、接口、抽象类、方法和属性
+B.  final修饰的类肯定不能被继承
+C. final修饰的方法不能被重载
+D. final修饰的变量不允许被再次赋值
+简答题：
+1. 抽象类（abstract class）和接口（interface）有什么区别？
+抽象类可以有构造方法；接口中不能有构造方法。
+抽象类中可以有普通成员变量或者常量或者静态变量；接口中没有普通成员变量和静态变量，只能是常量（默认修饰符为 publci static final）。
+抽象类中可以包含非抽象的普通方法和抽象方法及静态方法；接口中的所有方法必须都是抽象的，不能有非抽象的普通方法和静态方法（默认修饰符为 public abstract）。
+抽象类中的抽象方法访问类型可以是 public、protected 的；接口中的抽象方法只能是 public 的（默认修饰符为 public abstract）。一个子类可以实现多个接口，但只能继承一个抽象类。
+2. 程序实现冒泡排序算法。
+public class 冒泡排序 {
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
+        System.out.println("排序之前：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+        //冒泡排序
+        for (int i = 0; i < a.length; i++) {
+            for(int j = 0; j<a.length-i-1; j++){
+                //这里-i主要是每遍历一次都把最大的i个数沉到最底下去了，没有必要再替换了
+                if(a[j]>a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("排序之后：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+3. 哈
+
+
+高级：
+单选：
+多选：
+简答：
+1. 程序实现归并排序算法。
+public class 归并排序 {
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
+        System.out.println("排序之前：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+        //归并排序
+        mergeSort(a,0,a.length-1);
+        System.out.println();
+        System.out.println("排序之后：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+    }
+
+    private static void mergeSort(int[] a, int left, int right) {
+        if(left<right){
+            int middle = (left+right)/2;
+            //对左边进行递归
+            mergeSort(a, left, middle);
+            //对右边进行递归
+            mergeSort(a, middle+1, right);
+            //合并
+            merge(a,left,middle,right);
+        }
+    }
+
+    private static void merge(int[] a, int left, int middle, int right) {
+        int[] tmpArr = new int[a.length];
+        int mid = middle+1; //右边的起始位置
+        int tmp = left;
+        int third = left;
+        while(left<=middle && mid<=right){
+            //从两个数组中选取较小的数放入中间数组
+            if(a[left]<=a[mid]){
+                tmpArr[third++] = a[left++];
+            }else{
+                tmpArr[third++] = a[mid++];
+            }
+        }
+        //将剩余的部分放入中间数组
+        while(left<=middle){
+            tmpArr[third++] = a[left++];
+        }
+        while(mid<=right){
+            tmpArr[third++] = a[mid++];
+        }
+        //将中间数组复制回原数组
+        while(tmp<=right){
+            a[tmp] = tmpArr[tmp++];
+        }
+    }
+}
+2. 哈哈
